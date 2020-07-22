@@ -10,4 +10,4 @@
   version: 3.0.1
 
 - src: ome.omero_user
-  version: 0.1.2
+  version: 0.3.0
