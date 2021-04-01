@@ -1,5 +1,5 @@
 ---
-- hosts: omero-all
+- hosts: omero-public
   tasks:
     - name: Install curl for tests
       become: true
