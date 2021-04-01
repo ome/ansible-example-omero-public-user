@@ -8,7 +8,6 @@ lint:
 platforms:
   - name: omero-public
     image: centos/systemd
-    image_version: latest
     privileged: true
     command: /sbin/init
 provisioner:
@@ -17,13 +16,8 @@ provisioner:
     name: ansible-lint
   playbooks:
     converge: ../../playbook.yml
-  inventory:
-    host_vars:
-      omero-public:
-        omero_server_systemd_require_network: false
-        postgresql_version: "10"
 scenario:
-  name: default
+  name: centos7
 verifier:
   name: testinfra
   lint:
