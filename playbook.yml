@@ -1,6 +1,11 @@
 ---
-# Install OMERO.server and OMERO.web with a public user on localhost
+- hosts: all
+  tasks:
+    - name: Set OS distribution dependent variables
+      include_vars: "{{ ansible_facts['os_family'] | lower }}.yml"
+      when: ansible_facts['os_family'] == "Debian"
 
+# Install OMERO.server and OMERO.web with a public user on localhost
 - hosts: all
   roles:
 
